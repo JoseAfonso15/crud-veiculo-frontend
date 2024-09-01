@@ -1,0 +1,113 @@
+<div class="container">
+    <h1>Criar veículo</h1>
+    <a href="#" routerLink="/veiculo/index" class="btn btn-primary mb-3">Voltar</a>
+    <div class="col-12">  
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="placa">Placa:</label>
+                        <input 
+                            formControlName="placa"
+                            id="placa" 
+                            type="text" 
+                            class="form-control uppercase-input"
+                            [ngClass]="{'is-invalid': f['placa'].touched && f['placa'].invalid}">
+                        <div *ngIf="f['placa'].touched && f['placa'].invalid" class="invalid-feedback">
+                            O campo placa é obrigatório.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="chassi">Chassi:</label>
+                        <input 
+                            formControlName="chassi"
+                            id="chassi" 
+                            type="text" 
+                            class="form-control uppercase-input"
+                            [ngClass]="{'is-invalid': f['chassi'].touched && f['chassi'].invalid}">
+                        <div *ngIf="f['chassi'].touched && f['chassi'].invalid" class="invalid-feedback">
+                            O campo chassi é obrigatório.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="renavam">Renavam:</label>
+                        <input 
+                            formControlName="renavam"
+                            id="renavam" 
+                            type="text" 
+                            class="form-control uppercase-input"
+                            [ngClass]="{'is-invalid': f['renavam'].touched && f['renavam'].invalid}">
+                        <div *ngIf="f['renavam'].touched && f['renavam'].invalid" class="invalid-feedback">
+                            O campo renavam é obrigatório.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="modelo">Modelo:</label>
+                        <input 
+                            formControlName="modelo"
+                            id="modelo" 
+                            type="text" 
+                            class="form-control"
+                            [ngClass]="{'is-invalid': f['modelo'].touched && f['modelo'].invalid}">
+                        <div *ngIf="f['modelo'].touched && f['modelo'].invalid" class="invalid-feedback">
+                            O campo modelo é obrigatório.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="marca">Marca:</label>
+                        <input 
+                            formControlName="marca"
+                            id="marca" 
+                            type="text" 
+                            class="form-control"
+                            [ngClass]="{'is-invalid': f['marca'].touched && f['marca'].invalid}">
+                        <div *ngIf="f['marca'].touched && f['marca'].invalid" class="invalid-feedback">
+                            O campo marca é obrigatório.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="ano">Ano:</label>
+                        <input 
+                            formControlName="ano"
+                            id="ano" 
+                            type="number" 
+                            class="form-control"
+                            [ngClass]="{'is-invalid': f['ano'].touched && f['ano'].invalid}">
+                        <div *ngIf="f['ano'].touched && f['ano'].invalid" class="invalid-feedback">
+                            O campo ano é obrigatório.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="mt-2 btn btn-primary" type="submit" [disabled]="!form.valid">Salvar</button>
+        </form>
+    </div>
+</div>
+<ng-template #errorModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Atenção</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <ul>
+        <li *ngFor="let message of errorMessages">{{ message }}</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')">Ok</button>
+    </div>
+</ng-template>

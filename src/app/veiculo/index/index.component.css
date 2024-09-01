@@ -1,0 +1,13 @@
+.btn-custom {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 10px; /* Espaço entre os botões */
+  }
+  
+  /* Remove a margem do último botão */
+  td .btn-custom:last-child {
+    margin-right: 0;
+  }
+
+  th.centered {
+    text-align: center;
+  }
