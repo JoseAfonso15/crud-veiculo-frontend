@@ -3,7 +3,7 @@
 Este é um sistema front-end para gerenciamento de veículos, construído com Angular. O sistema fornece operações CRUD (Criar, Ler, Atualizar e Deletar) para veículos.
 
 ## Requisitos 
-        Node.js (versão 14 ou superior)
+        Node.js versão mínima v18.19.0
         Angular CLI (versão 18.2.2 ou superior)
      
 ## Instalação
